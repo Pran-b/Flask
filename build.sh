@@ -35,11 +35,6 @@ for LAMBDA in $LAMBDA_NAMES; do
   echo "📦 Processing Lambda: $LAMBDA ($ARN)"
 
   # Lambda type (zip/code/container)
-  LAMBDA_TYPE=$(yq e ".lambdas.$LAMBDA.type" "$DEVKIT_FILE")
-  if [[ "$LAMBDA_TYPE" == "null" ]]; then
-    LAMBDA_TYPE="zip"
-  fi
-  echo "   → Lambda type: $LAMBDA_TYPE"
 
   # Requirements file
   REQ_PATH=$(yq e ".lambdas.$LAMBDA.requirementsPath" "$DEVKIT_FILE")
