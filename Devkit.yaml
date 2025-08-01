@@ -1,0 +1,9 @@
+platformId: "PLATFORM-1234"
+
+lambdasArns:
+    dev: arn:aws:lambda:us-east-1:123456789012:function:function1-dev
+    uat: arn:aws:lambda:us-east-1:123456789012:function:function1-uat
+    prod: arn:aws:lambda:us-east-1:123456789012:function:function1-prod
+
+requirementsPath: "./requirements.txt"
+dependencies: "./packages/*"
