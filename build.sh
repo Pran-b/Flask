@@ -19,10 +19,7 @@ if ! command -v yq &> /dev/null; then
 fi
 
 # 2️⃣ Detect branch (target of PR or current branch in pipeline)
-BRANCH_NAME=${CODEBUILD_SOURCE_VERSION:-$(git rev-parse --abbrev-ref HEAD)}
-if [[ "$BRANCH_NAME" == "refs/heads/"* ]]; then
-  BRANCH_NAME=${BRANCH_NAME#refs/heads/}
-fi
+BRANCH_NAME='dev'
 echo "✅ Detected branch: $BRANCH_NAME"
 
 # 3️⃣ Get all Lambda names from devkit.yaml
